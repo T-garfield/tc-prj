@@ -36,5 +36,5 @@ slider.oninput = function() {
 
 function btnCopy() {
     console.log(fResVal);
-    navigator.clipboard.writeText(fResVal);
+    navigator.clipboard.writeText(fResVal*slider.value);
 };
