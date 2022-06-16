@@ -1,5 +1,3 @@
-console.log();
-
 var slider = document.getElementById("myRange");
 var output = document.getElementById("levVal");
 
@@ -8,37 +6,63 @@ var sl = document.querySelector('.input-box__sl > input');
 var slu = document.querySelector('.input-box__u > input');
 var levXinput = document.querySelector('.input-box__lev > input');
 
-var slVal, sluVal, levXinputVal;
+var slVal, sluVal, levXinputVal, part;
 
-sluVal = slu.value;
 
-sl.oninput = function() {
-    console.log(this.value);
-    slVal = this.value;
-}
+// order: 3-3-2-1
 
-slu.oninput = function() {
-    console.log(this.value);
-    sluVal = this.value;
-}
+output.innerHTML = 50;
+sluVal = 70;
 
-// console.log(slider);
-// console.log(output);
 
-output.innerHTML = slider.value; // Display the default slider value
-// output.innerHTML = "Hiiii";
-
-// Update the current slider value (each time you drag the slider handle)
+// PART - 1
 slider.oninput = function() {
-  output.innerHTML = this.value;
-  fResVal = Math.round((sluVal/(slVal/100))/slider.value*10000)/10000;
-  fRes.innerHTML = fResVal;
+    output.innerHTML = this.value;
+    part = 1;
+    main();
 }
 
+// PART - 2
 levXinput.oninput = function() {
     levXinputVal = this.value;
-    fResVal = Math.round((sluVal/(slVal/100))/levXinputVal*10000)/10000;
-    fRes.innerHTML = fResVal;
+    output.innerHTML = this.value;
+    part = 2;
+    main();
+}
+
+// PART - 3
+slu.oninput = function() {
+    sluVal = this.value;
+    part = 3;
+    main();
+}
+
+sl.oninput = function() {
+    slVal = this.value;
+    part = 3;
+    console.log(slVal);
+    main();
+}
+
+
+///
+///
+//// functions
+
+function main() {
+    switch (part) {
+        case 1:
+            fResVal = Math.round((sluVal/(slVal/100))/slider.value*10000)/10000;
+            break;
+        case 2:
+            fResVal = Math.round((sluVal/(slVal/100))/levXinputVal*10000)/10000;
+            break;
+        case 3:
+            fResVal = Math.round((sluVal/(slVal/100))/output.innerText*10000)/10000;
+            break;
+    }
+    
+    fRes.innerHTML = fResVal;    
 }
 
 
