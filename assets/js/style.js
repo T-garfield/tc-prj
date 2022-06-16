@@ -18,6 +18,7 @@ sluVal = 70;
 // PART - 1
 slider.oninput = function() {
     output.innerHTML = this.value;
+    levXinput.value = this.value;
     part = 1;
     main();
 }
@@ -26,6 +27,7 @@ slider.oninput = function() {
 levXinput.oninput = function() {
     levXinputVal = this.value;
     output.innerHTML = this.value;
+    slider.value = this.value;
     part = 2;
     main();
 }
