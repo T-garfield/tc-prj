@@ -6,8 +6,9 @@ var output = document.getElementById("levVal");
 var fRes = document.getElementById("js-res");
 var sl = document.querySelector('.input-box__sl > input');
 var slu = document.querySelector('.input-box__u > input');
+var levXinput = document.querySelector('.input-box__lev > input');
 
-var slVal, sluVal;
+var slVal, sluVal, levXinputVal;
 
 sluVal = slu.value;
 
@@ -33,6 +34,13 @@ slider.oninput = function() {
   fResVal = Math.round((sluVal/(slVal/100))/slider.value*10000)/10000;
   fRes.innerHTML = fResVal;
 }
+
+levXinput.oninput = function() {
+    levXinputVal = this.value;
+    fResVal = Math.round((sluVal/(slVal/100))/levXinputVal*10000)/10000;
+    fRes.innerHTML = fResVal;
+}
+
 
 function btnCopy() {
     console.log(fResVal);
