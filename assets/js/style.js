@@ -2,11 +2,13 @@ var slider = document.getElementById("myRange");
 var output = document.getElementById("levVal");
 
 var fRes = document.getElementById("js-res");
+var fResBig = document.getElementById("js-res--big");
+
 var sl = document.querySelector('.input-box__sl > input');
 var slu = document.querySelector('.input-box__u > input');
 var levXinput = document.querySelector('.input-box__lev > input');
 
-var slVal, sluVal, levXinputVal, part;
+var slVal, sluVal, levXinputVal, fResBigVal, part;
 
 
 // order: 3-3-2-1
@@ -55,16 +57,20 @@ function main() {
     switch (part) {
         case 1:
             fResVal = Math.round((sluVal/(slVal/100))/slider.value*10000)/10000;
+            fResBigVal = Math.round(fResVal*slider.value*1000)/1000;
             break;
         case 2:
             fResVal = Math.round((sluVal/(slVal/100))/levXinputVal*10000)/10000;
+            fResBigVal = Math.round(fResVal*levXinputVal*1000)/1000;
             break;
         case 3:
             fResVal = Math.round((sluVal/(slVal/100))/output.innerText*10000)/10000;
+            fResBigVal = Math.round(fResVal*output.innerText*1000)/1000;
             break;
     }
     
     fRes.innerHTML = fResVal;    
+    fResBig.innerHTML = fResBigVal;
 }
 
 
