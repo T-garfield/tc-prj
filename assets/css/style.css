@@ -103,7 +103,7 @@ body {
     opacity: 1;
 }
 
-#toMoon {
+.changeSBotic {
     width: 30px;
     height: 30px;
     background: url('../img/iso.png');
@@ -113,6 +113,18 @@ body {
     cursor: pointer;
 }
 
-#toMoon:hover {
+.changeSBotic:hover {
     opacity: 1;
+}
+
+#toMoon {
+    background: url('../img/iso.png');
+    background-position: center;
+    background-size: contain;
+}
+
+#toCur {
+    background: url('../img/curr.png');
+    background-position: center;
+    background-size: contain;
 }
