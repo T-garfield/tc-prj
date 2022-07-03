@@ -135,3 +135,17 @@ body {
     font-size: 1em;
     font-weight: bolder;
 }
+
+#toMoon {
+    width: 30px;
+    height: 30px;
+    background: url('../img/home.png');
+    background-position: center;
+    background-size: contain;
+    opacity: .6;
+    cursor: pointer;
+}
+
+#toMoon:hover {
+    opacity: 1;
+}

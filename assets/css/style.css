@@ -102,3 +102,17 @@ body {
 .btn-copy:hover {
     opacity: 1;
 }
+
+#toMoon {
+    width: 30px;
+    height: 30px;
+    background: url('../img/iso.png');
+    background-position: center;
+    background-size: contain;
+    opacity: .6;
+    cursor: pointer;
+}
+
+#toMoon:hover {
+    opacity: 1;
+}
