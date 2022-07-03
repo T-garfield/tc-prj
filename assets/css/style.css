@@ -104,11 +104,8 @@ body {
 }
 
 .changeSBotic {
-    width: 30px;
-    height: 30px;
-    background: url('../img/iso.png');
-    background-position: center;
-    background-size: contain;
+    width: 60px;
+    height: 60px;
     opacity: .6;
     cursor: pointer;
 }
@@ -121,10 +118,12 @@ body {
     background: url('../img/iso.png');
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #toCur {
     background: url('../img/curr.png');
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
 }
